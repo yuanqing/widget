@@ -8,7 +8,7 @@
  *
  * @category UI
  */
- export function showUI<Data extends Record<string, unknown>>(
+export function showUI<Data extends Record<string, unknown>>(
   options: ShowUIOptions,
   data?: Data
 ): void {
