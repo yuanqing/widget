@@ -4,7 +4,7 @@ import { once } from '@create-figma-plugin/utilities'
 import { showUI } from './show-ui'
 
 const { widget } = figma
-const { Frame, Text, useSyncedState, usePropertyMenu } = widget
+const { AutoLayout, Text, useSyncedState, usePropertyMenu } = widget
 
 export default function () {
   widget.register(Notepad)
@@ -34,7 +34,7 @@ function Notepad () {
   }
   usePropertyMenu(items, onChange)
   return (
-    <Frame
+    <AutoLayout
       direction='horizontal'
       horizontalAlignItems='center'
       verticalAlignItems='center'
@@ -46,11 +46,11 @@ function Notepad () {
         type: 'drop-shadow',
         color: { r: 0, g: 0, b: 0, a: 0.2 },
         offset: { x: 0, y: 0 },
-        radius: 2,
+        blur: 2,
         spread: 2
       }}
     >
-      <Frame
+      <AutoLayout
         direction='vertical'
         horizontalAlignItems='start'
         verticalAlignItems='start'
@@ -62,7 +62,7 @@ function Notepad () {
             </Text>
           ) : null
         })}
-      </Frame>
-    </Frame>
+      </AutoLayout>
+    </AutoLayout>
   )
 }
