@@ -38,6 +38,3 @@ $ npm run watch
 
 - A [`build-figma-plugin.manifest.js`](/build-figma-plugin.manifest.js) file is used to add a `"containsWidget"` key to the generated `manifest.json` file.
   - The `build-figma-plugin.manifest.js` file is an escape hatch for modifying the `manifest.json` just before it gets output by the `build-figma-plugin` CLI. This should no longer be necessary when `"containsWidget"` is added as an official [configuration option](https://yuanqing.github.io/create-figma-plugin/#configuration-options) when the FigJam Widgets API is stable.
-
-- To display a UI, the `showUI` function from [`src/show-ui.ts`](/src/show-ui.ts) is used instead of the [`showUI`](https://yuanqing.github.io/create-figma-plugin/#showuidataoptions--data) function from `@create-figma-plugin/utilities`.
-  - This is a workaround that’s currently required because of a bug in FigJam in which [`figma.command`](https://figma.com/plugin-docs/api/figma/#command) is not set to the empty string. Use of `src/show-ui.ts` should no longer be necessary when this particular bug is fixed. (The diff between `src/show-ui.ts` and the `showUI` from `@create-figma-plugin/utilities` is actually [just a single line](https://gist.github.com/yuanqing/f5c3ce97737d072432cd86719b84c844#file-diff).)

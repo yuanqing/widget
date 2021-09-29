@@ -1,7 +1,6 @@
 /** @jsx figma.widget.h */
 
-import { once } from '@create-figma-plugin/utilities'
-import { showUI } from './show-ui'
+import { once, showUI } from '@create-figma-plugin/utilities'
 
 const { widget } = figma
 const { AutoLayout, Text, useSyncedState, usePropertyMenu } = widget
